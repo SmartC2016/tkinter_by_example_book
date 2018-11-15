@@ -10,27 +10,28 @@ class Todo(tk.Tk):
         else:
             self.tasks = tasks
 
-    self.title("To-Do App v1")
+        self.title("To-Do App v1")
 
-    self.geometry("300x400")
+        self.geometry("300x400")
 
-    todo1 = tk.Label(self, text="- - - Add Items here - - -", bg="lightgrey", fg="black",
-                     pady=10)
+        todo1 = tk.Label(self, text="- - - Add Items here - - -", bg="lightgrey", fg="black",
+                         pady=10)
 
-    self.tasks.append(todo1)
+        self.tasks.append(todo1)
 
-    for task in self.tasks:
-        task.pack(side=tk.TOP, fill=tk.X)
+        for task in self.tasks:
+            task.pack(side=tk.TOP, fill=tk.X)
 
-    self.task_create = tk.Text(self, height=3, bg="white", fg="black")
+        self.task_create = tk.Text(self, height=3, bg="white", fg="black")
 
-    self.task_create.pack(side=tk.BOTTOM, fill=tk.X)
-    self.task_create.focus_set()
+        self.task_create.pack(side=tk.BOTTOM, fill=tk.X)
+        self.task_create.focus_set()
 
-    self.bind("<RETURN>", self.add_task)
+        self.bind("<Return>", self.add_task)
 
-    self.colour_schemes = [{"bg": "lightgrey", "fg": "black"},
-                           {"bg": "grey", "fg": "white"}]
+        self.colour_schemes = [{"bg": "lightgrey", "fg": "black"},
+                               {"bg": "grey", "fg": "white"}]
+        return
 
     def add_task(self, event=None):
         task_text = self.task_create.get(1.0, tk.END).strip()
@@ -48,10 +49,10 @@ class Todo(tk.Tk):
             new_task.pack(side=tk.TOP, fill=tk.X)
 
             self.tasks.append(new_task)
-        
+
         self.task_create.delete(1.0, tk.END)
 
 
 if __name__ == "__main__":
-    todo = Root()
+    todo = Todo()
     todo.mainloop()
