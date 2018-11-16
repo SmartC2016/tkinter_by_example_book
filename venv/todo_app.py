@@ -1,5 +1,8 @@
 """
-This is the first version of the todo app from the book "Tkinter by Example by David Love, Jan 2018
+This is the second version of the todo app from the book "Tkinter by Example by David Love, Jan 2018
+Tkinter by Example, Chapter 2, App 1
+coded by: Christian Hetmann
+Last Edit: 16.11.2018
 """
 
 
