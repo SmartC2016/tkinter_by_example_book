@@ -45,12 +45,6 @@ class Todo(tk.Tk):
         self.text_frame.pack(side=tk.BOTTOM, fill=tk.X)
         self.task_create.focus_set()
 
-        todo1 = tk.Label(self.tasks_frame, text="- - - Add Items here - - -", bg="lightgrey",
-                         fg="black", pady=10)
-        todo1.bind("<Button-1>", self.remove_task)
-
-        self.tasks.append(todo1)
-
         for task in self.tasks:
             task.pack(side=tk.TOP, fill=tk.X)
 
@@ -70,22 +64,6 @@ class Todo(tk.Tk):
             self.add_task(None, task_text, True)
 
         return
-
-    # def add_task(self, event=None):
-    #     task_text = self.task_create.get(1.0, tk.END).strip()
-    #
-    #     if len(task_text) > 0:
-    #         new_task = tk.Label(self.tasks_frame, text=task_text, pady=10)
-    #         self.set_task_colour(len(self.tasks), new_task)
-    #
-    #         new_task.bind("<Button-1>", self.remove_task)
-    #         new_task.pack(side=tk.TOP, fill=tk.X)
-    #
-    #         self.tasks.append(new_task)
-    #
-    #     self.task_create.delete(1.0, tk.END)
-    #     return
-
 
     def add_task(self, event=None, task_text=None, from_db=False):
         if not task_text:
@@ -107,16 +85,6 @@ class Todo(tk.Tk):
         self.task_create.delete(1.0, tk.END)
         return
 
-
-    # def remove_task(self, event):
-    #     task = event.widget
-    #     if msg.askyesno("Really Delete?", "Delete " + task.cget("text") + "?"):
-    #         self.tasks.remove(event.widget)
-    #         event.widget.destroy()
-    #         self.recolour_tasks()
-    #     return
-
-
     def remove_task(self, event):
         task = event.widget
         if msg.askyesno("Really Delete?", "Delete " + task.cget("text") + "?"):
@@ -129,9 +97,6 @@ class Todo(tk.Tk):
             event.widget.destroy()
             self.recolour_tasks()
         return
-
-
-
 
     def recolour_tasks(self):
         for index, task in enumerate(self.tasks):
@@ -204,7 +169,6 @@ class Todo(tk.Tk):
         default_task_data = ("- - - Add Items Here - - -",)
         Todo.runQuery(default_task_query, default_task_data)
         return
-
 
 
 if __name__ == "__main__":
