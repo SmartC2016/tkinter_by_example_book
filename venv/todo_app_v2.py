@@ -1,5 +1,7 @@
 """
 This is the second version of the todo app from the book "Tkinter by Example by David Love, Jan 2018
+coded by: Christian Hetmann
+Last Edit: 16.11.2018
 """
 
 import tkinter as tk
