@@ -1,3 +1,8 @@
+"""
+This is the first version of the todo app from the book "Tkinter by Example by David Love, Jan 2018
+"""
+
+
 import tkinter as tk
 
 
