@@ -118,6 +118,6 @@ class Todo(tk.Tk):
             self.tasks_canvas.yview_scroll(move, "units")
         return
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     todo = Todo()
     todo.mainloop()
