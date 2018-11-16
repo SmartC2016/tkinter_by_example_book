@@ -1,5 +1,6 @@
 """
 This is the third version of the todo app from the book "Tkinter by Example by David Love, Jan 2018
+Tkinter by Example, Chapter 2, App 3
 coded by: Christian Hetmann
 Last Edit: 16.11.2018
 """
